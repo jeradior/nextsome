@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Windows 설치 다운로드 가이드</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; line-height: 1.7; color: #2c3e50; background: #f8f9fa; padding: 20px; }
+        .container { max-width: 860px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        h1 { color: #d97706; border-bottom: 3px solid #d97706; padding-bottom: 12px; margin-bottom: 24px; }
+        h2 { color: #1f2937; margin-top: 36px; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid #d97706; }
+        h3 { margin-top: 20px; margin-bottom: 10px; color: #374151; }
+        p, li { margin-bottom: 8px; }
+        ul, ol { padding-left: 24px; margin-bottom: 12px; }
+        code { background: #f3f4f6; padding: 2px 8px; border-radius: 4px; font-family: Consolas, monospace; color: #b91c1c; }
+        pre { background: #1f2937; color: #f3f4f6; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        pre code { background: transparent; color: inherit; padding: 0; }
+        .btn { display: inline-block; background: #d97706; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 8px 8px 8px 0; }
+        .btn.secondary { background: #4b5563; }
+        .notice { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+        .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; margin: 16px 0; background: #fafafa; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        th, td { border: 1px solid #e5e7eb; padding: 10px 12px; text-align: left; }
+        th { background: #f3f4f6; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude Windows 설치 다운로드 가이드</h1>
+        <p>Windows 환경에서 Claude를 설치하고 사용하는 방법을 안내합니다.</p>
+
+        <h2>1. 시스템 요구 사항</h2>
+        <table>
+            <tr><th>항목</th><th>요구 사양</th></tr>
+            <tr><td>운영체제</td><td>Windows 10 (64bit) 이상 / Windows 11 권장</td></tr>
+            <tr><td>RAM</td><td>최소 4GB, 권장 8GB 이상</td></tr>
+            <tr><td>디스크 공간</td><td>약 500MB 이상</td></tr>
+            <tr><td>네트워크</td><td>인터넷 연결 필수</td></tr>
+        </table>
+
+        <h2>2. Claude Desktop 앱 설치 (일반 사용자)</h2>
+        <div class="card">
+            <ol>
+                <li>공식 사이트 <code>claude.ai/download</code> 접속</li>
+                <li><strong>Download for Windows</strong> 클릭하여 <code>.exe</code> 다운로드</li>
+                <li>설치 파일 더블 클릭 → SmartScreen 경고 시 <em>추가 정보 → 실행</em></li>
+                <li>설치 마법사 진행 후 Anthropic 계정으로 로그인</li>
+            </ol>
+            <a class="btn" href="https://claude.ai/download">Claude Desktop 다운로드</a>
+            <a class="btn secondary" href="https://claude.ai">웹에서 바로 사용</a>
+        </div>
+
+        <h2>3. Claude Code 설치 (개발자용 CLI)</h2>
+        <div class="card">
+            <h3>3-1. Node.js 설치</h3>
+            <p><code>nodejs.org</code>에서 LTS 버전 다운로드 후 설치. PowerShell에서 확인:</p>
+<pre><code>node --version
+npm --version</code></pre>
+            <h3>3-2. Claude Code 전역 설치</h3>
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+            <p>작업 폴더로 이동 후 실행:</p>
+<pre><code>cd C:\Users\사용자명\프로젝트
+claude</code></pre>
+        </div>
+
+        <h2>4. 설치 확인</h2>
+<pre><code>claude --version
+claude --help</code></pre>
+
+        <h2>5. 자주 발생하는 문제</h2>
+        <div class="notice"><strong>SmartScreen 차단</strong> — <em>추가 정보 → 실행</em>으로 진행</div>
+        <div class="notice"><strong>npm 권한 오류</strong> — PowerShell을 관리자 권한으로 실행하거나 <code>npm config set prefix %APPDATA%\npm</code></div>
+        <div class="notice"><strong>로그인 실패</strong> — 프록시/방화벽이 <code>anthropic.com</code>을 차단하는지 확인</div>
+
+        <h2>6. 참고 링크</h2>
+        <ul>
+            <li><a href="https://claude.ai/download">Claude Desktop 다운로드</a></li>
+            <li><a href="https://docs.anthropic.com/claude/docs">Anthropic 공식 문서</a></li>
+            <li><a href="https://docs.claude.com/claude-code">Claude Code 문서</a></li>
+        </ul>
+
+        <footer><p>본 페이지는 비공식 한국어 설치 가이드입니다. 최신 정보는 Anthropic 공식 사이트를 참고하세요.</p></footer>
+    </div>
+</body>
+</html>
